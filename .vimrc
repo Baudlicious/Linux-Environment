@@ -1,5 +1,5 @@
 syntax enable
-set number relativenumbers
+set number relativenumber
 
 set tabstop=4
 set softtabstop=4
