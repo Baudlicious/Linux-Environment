@@ -1,20 +1,32 @@
-syntax enable
 set number relativenumber
+syntax enable
+set visualbell
+set rulerset hlsearch
+autocmd FileType python setlocal autoindent softtabstop=4 tabstop=4 shiftwidth=4
+expandtab
 
-set tabstop=4
-set softtabstop=4
-set expandtab
-
-set incsearch
-set hlsearch
-nnoremap <C-L> :noh<CR><C-L>
-
+"Wrapped lines behave like normal lines when using j,k
 nnoremap j gj
 nnoremap k gk
 
-imap jj <ESC>
+"Ctrl-L to clear highlighting
+nnoremap <C-L> :nohl<ESC><C-L>
 
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
+"Based on file type save file and run it..
+autocmd FileType rust map <buffer> <F5> <Esc>:w<CR>:!clear;cargo run<CR>
+autocmd FileType python map <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 
-hi Search ctermbg=DarkCyan
+
+filetype plugin on
+
+" Auto install plug if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+"Plug stuff
+call plug#begin('~/.vim/plugged')
+Plug 'rust-lang/rust.vim'
+call plug#end()
