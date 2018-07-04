@@ -16,7 +16,7 @@ nnoremap <C-L> :nohl<ESC><C-L>
 autocmd FileType rust map <buffer> <F5> <Esc>:w<CR>:!clear;cargo run<CR>
 autocmd FileType python map <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 
-imap jj <Esc> 
+inoremap jj <Esc> 
 
 filetype plugin on
 
