@@ -1,9 +1,9 @@
 set number relativenumber
 syntax enable
 set visualbell
-set rulerset hlsearch
-autocmd FileType python setlocal autoindent softtabstop=4 tabstop=4 shiftwidth=4
-expandtab
+set ruler
+set hlsearch
+autocmd FileType python setlocal autoindent softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 "Wrapped lines behave like normal lines when using j,k
 nnoremap j gj
@@ -16,6 +16,7 @@ nnoremap <C-L> :nohl<ESC><C-L>
 autocmd FileType rust map <buffer> <F5> <Esc>:w<CR>:!clear;cargo run<CR>
 autocmd FileType python map <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 
+imap jj <Esc> 
 
 filetype plugin on
 
