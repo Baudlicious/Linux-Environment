@@ -1,5 +1,7 @@
 set number relativenumber
 syntax enable
+set encoding=utf-8
+set fileencoding=utf-8
 set visualbell
 set ruler
 set hlsearch
@@ -31,4 +33,39 @@ endif
 "Plug stuff
 call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
+Plug 'vim-airline/vim-airline/'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+let g:airline_theme = 'ayu_mirage'
+set guifont=Fira\ Mono\ Medium\ for\ Powerline:h10
+ 
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
