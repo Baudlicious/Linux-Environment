@@ -1,10 +1,12 @@
-set number relativenumber
 syntax enable
+filetype plugin on
+set number relativenumber
 set encoding=utf-8
 set fileencoding=utf-8
 set visualbell
 set ruler
 set hlsearch
+set guifont=Fira\ Mono\ Medium\ for\ Powerline:h10
 autocmd FileType python setlocal autoindent softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 "Wrapped lines behave like normal lines when using j,k
@@ -21,8 +23,6 @@ autocmd FileType python map <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 " Escapes with the press of jk in insert mode 
 inoremap jk <Esc> 
 
-filetype plugin on
-
 " Auto install plug if not present
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -36,12 +36,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline/'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
-
-let g:airline_theme = 'ayu_mirage'
-set guifont=Fira\ Mono\ Medium\ for\ Powerline:h10
  
-" air-line
+" !!!!  air-line !!!!
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'ayu_mirage'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
