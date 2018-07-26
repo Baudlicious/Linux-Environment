@@ -9,6 +9,7 @@ set hlsearch
 set guifont=Fira\ Mono\ Medium\ for\ Powerline:h10
 set t_Co=256
 set background=dark
+set pastetoggle=<F2>
 
 autocmd FileType python setlocal autoindent softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
