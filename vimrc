@@ -10,13 +10,16 @@ set guifont=Fira\ Mono\ Medium\ for\ Powerline:h10
 set t_Co=256
 set background=dark
 set pastetoggle=<F2>
-
+set spell
+color dracula
 autocmd FileType python setlocal autoindent softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 "Wrapped lines behave like normal lines when using j,k
 nnoremap j gj
 nnoremap k gk
-
+" Line length 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.*/
 "Ctrl-L to clear highlighting
 nnoremap <C-L> :nohl<ESC><C-L>
 
@@ -39,6 +42,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline/'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dracula/vim'
 call plug#end()
  
 " !!!!  air-line !!!!
