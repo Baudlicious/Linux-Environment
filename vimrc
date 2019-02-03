@@ -10,8 +10,8 @@ set guifont=Fira\ Mono\ Medium\ for\ Powerline:h10
 set t_Co=256
 set background=dark
 set pastetoggle=<F2>
-set spell
-color dracula
+"set spell
+"color dracula
 autocmd FileType python setlocal autoindent softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 "Wrapped lines behave like normal lines when using j,k
@@ -26,6 +26,9 @@ nnoremap <C-L> :nohl<ESC><C-L>
 "Based on file type save file and run it..
 autocmd FileType rust map <buffer> <F5> <Esc>:w<CR>:!clear;cargo run<CR>
 autocmd FileType python map <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
+autocmd FileType c map <buffer> <F5> <Esc>:w<CR>:!cc % & ./a.out<CR>
+autocmd FileType sh map <buffer> <F5> <Esc>:w<CR>:!./%<CR>
+
 
 " Escapes with the press of jk in insert mode 
 inoremap jk <Esc> 
@@ -47,7 +50,7 @@ call plug#end()
  
 " !!!!  air-line !!!!
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'ayu_mirage'
+let g:airline_theme = 'angr'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -75,3 +78,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" Co Op Addons
+"
+set cursorline
